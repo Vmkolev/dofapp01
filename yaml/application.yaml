@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dofepapp-deploy
+  name: dofapp01-deploy
 spec:
   replicas: 2
   selector:
     matchLabels: 
-      app: dofepapp
+      app: dofapp01
   minReadySeconds: 10
   strategy:
     type: RollingUpdate
@@ -16,7 +16,7 @@ spec:
   template:
     metadata:
       labels:
-        app: dofepapp
+        app: dofapp01
     spec:
       containers:
       - name: app-cont
@@ -27,9 +27,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: dofepapp-svc
+  name: dofapp01-svc
   labels:
-    app: dofepapp
+    app: dofapp01
 spec:
   type: NodePort
   ports:
@@ -37,4 +37,4 @@ spec:
     nodePort: 31000
     protocol: TCP
   selector:
-    app: dofepapp
+    app: dofapp01
