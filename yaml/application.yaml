@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: app-cont
-        image: vmkolev/dofapp01:%IMAGE-PLACEHOLDER%
+        image: kolevvm/dof:%IMAGE-PLACEHOLDER%
         ports:
         - containerPort: 80 
 ---
